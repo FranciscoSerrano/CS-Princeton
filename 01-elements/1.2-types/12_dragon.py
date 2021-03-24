@@ -1,0 +1,3 @@
+"""
+Dragon curve. Compose a program to write the instructions for drawing the dragon curves of order 0 through 5. The instructions are strings of the characters F, L, and R, where F means "draw line while moving 1 unit forward", L means "turn left", and R means turn right. A dragon curve of order n is formed when you fold a strip of paper in half n times, then unfold to right angles. The key to solving this problem is to note that a curve of order n is a curve of order n-1 followed by an L followed by a curve of order n-1 traversed in reverse order, and then to figure out a similar description of the reverse curve.
+"""
