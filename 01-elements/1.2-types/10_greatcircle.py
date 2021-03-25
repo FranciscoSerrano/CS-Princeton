@@ -17,3 +17,28 @@ The Haversine formula is accurate for most distances, but it suffers from roundi
 
 This Kahan reference provides more details.
 """
+
+import sys
+import math
+
+acos = math.acos
+sin = math.sin
+cos = math.cos
+
+x1 = float(sys.argv[1])
+y1 = float(sys.argv[2])
+x2 = float(sys.argv[3])
+y2 = float(sys.argv[4])
+
+# convert to radians because it doesnt work otherwise
+x1 = math.radians(x1)
+y1 = math.radians(y1)
+x2 = math.radians(x2)
+y2 = math.radians(y2)
+
+angle = acos(sin(x1) * sin(x2) + cos(x1) * cos(x2) * cos(y1 - y2))
+degrees = math.degrees(angle)
+
+distance = 60.0 * degrees
+
+print(str(distance) + ' nautical miles')

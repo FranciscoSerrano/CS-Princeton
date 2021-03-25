@@ -11,3 +11,26 @@ Here's an example run:
     yellow  = 0.0
     black   = 0.4901960784313726
 """
+import sys
+
+r = int(sys.argv[1])
+g = int(sys.argv[2])
+b = int(sys.argv[3])
+
+if r == 0 and g == 0 and b == 0:
+    c = 0
+    m = 0
+    y = 0
+    k = 1
+else:
+    w = max(r/255, g/255, b/255)
+    c = (w - r/255)/w
+    m = (w - g/255)/w
+    y = (w - b/255)/w
+    k = 1 - w
+
+
+print("cyan       =", c)
+print("magenta    =", m)
+print("yellow     =", y)
+print("black      =", k)
