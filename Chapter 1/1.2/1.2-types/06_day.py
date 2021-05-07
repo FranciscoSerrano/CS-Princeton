@@ -13,3 +13,18 @@ For example, on what day of the week was August 2, 1953?
     m = 8 + 12*0 - 2 = 6
     d = (2 + 2426 + (31*6) / 12) mod 7 = 2443 mod 7 = 0 (Sunday)
 """
+import sys
+
+m = int(sys.argv[1])
+d = int(sys.argv[2])
+y = int(sys.argv[3])
+
+y0 = y - (14 - m) // 12
+x = y0 + y0//4 - y0//100 + y0//400
+m0 = m + 12 * ((14 - m) // 12) - 2
+d0 = (d + x + (31*m0)//12) % 7
+
+print(d0)
+
+#❯ python 06_day.py 3 24 2021
+# --> 3
